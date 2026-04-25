@@ -1,59 +1,60 @@
-# AttusFrontendChallenge
+# Attus - Avaliação Técnica (Front End - Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+Este repositório contém a solução para o desafio técnico da **Attus**. A aplicação consiste em um sistema de gerenciamento de usuários desenvolvido com as versões mais recentes do ecossistema Angular.
 
-## Development server
+## 🔥 Introdução
 
-To start a local development server, run:
+O objetivo deste projeto é avaliar conhecimentos em Angular 17+, RxJS, NgRx, Angular Material e integração com APIs (mockadas).
+
+**Funcionalidades principais:**
+
+* Listagem de usuários com estado de loading e tratamento de erro
+* Filtro de pesquisa reativo com `debounceTime` de 300ms
+* Criação e edição de usuários através de modais (`MatDialog`)
+* Formulários reativos com validações em tempo real
+* Gerenciamento de estado global utilizando a arquitetura NgRx
+
+## ⚙️ Pré-requisitos
+
+Para rodar este projeto, você precisa ter instalado:
+
+* [Node.js](https://nodejs.org/) (versão 18 ou superior)
+* [Angular CLI](https://angular.io/cli) (versão 17 ou superior)
+* Gerenciador de pacotes `npm`
+
+## 🔨 Guia de instalação
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/angelosilvanno/attus-frontend-challenge.git
+```
+
+2. Entre na pasta do projeto:
+
+```bash
+cd attus-frontend-challenge
+```
+
+3. Instale as dependências:
+
+```bash
+npm install
+```
+
+4. Execute o projeto:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse: [http://localhost:4200/](http://localhost:4200/) no seu navegador.
 
-## Code scaffolding
+## 🧰 Tecnologias usadas
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+* ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge\&logo=angular\&logoColor=white)
+* ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge\&logo=typescript\&logoColor=white)
+* ![RxJS](https://img.shields.io/badge/rxjs-%23B7178C.svg?style=for-the-badge\&logo=rxjs\&logoColor=white)
+* ![NgRx](https://img.shields.io/badge/ngrx-%23BA2BD2.svg?style=for-the-badge\&logo=ngrx\&logoColor=white)
+* ![Angular Material](https://img.shields.io/badge/angular_material-%230081CB.svg?style=for-the-badge\&logo=angular\&logoColor=white)
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
