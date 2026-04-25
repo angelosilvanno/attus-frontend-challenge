@@ -2,7 +2,7 @@
 
 Este repositório contém a solução para o desafio técnico da **Attus**. A aplicação consiste em um sistema de gerenciamento de usuários desenvolvido com as versões mais recentes do ecossistema Angular.
 
-## 🔥 Introdução
+## Introdução
 
 O objetivo deste projeto é avaliar conhecimentos em Angular 17+, RxJS, NgRx, Angular Material e integração com APIs (mockadas).
 
@@ -14,7 +14,7 @@ O objetivo deste projeto é avaliar conhecimentos em Angular 17+, RxJS, NgRx, An
 * Formulários reativos com validações em tempo real
 * Gerenciamento de estado global utilizando a arquitetura NgRx
 
-## ⚙️ Pré-requisitos
+## Pré-requisitos
 
 Para rodar este projeto, você precisa ter instalado:
 
@@ -22,7 +22,7 @@ Para rodar este projeto, você precisa ter instalado:
 * [Angular CLI](https://angular.io/cli) (versão 17 ou superior)
 * Gerenciador de pacotes `npm`
 
-## 🔨 Guia de instalação
+## Guia de instalação
 
 1. Clone o repositório:
 
@@ -50,7 +50,7 @@ ng serve
 
 Acesse: [http://localhost:4200/](http://localhost:4200/) no seu navegador.
 
-## 🧰 Tecnologias usadas
+## Tecnologias usadas
 
 * ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge\&logo=angular\&logoColor=white)
 * ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge\&logo=typescript\&logoColor=white)
