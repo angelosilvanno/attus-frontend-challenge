@@ -1,0 +1,41 @@
+<mat-toolbar color="primary" class="main-toolbar">
+  <span>USUÁRIOS</span>
+  <div class="search-container">
+    <mat-icon>search</mat-icon>
+    <input type="text" [formControl]="searchControl" placeholder="Pesquisar...">
+  </div>
+</mat-toolbar>
+
+<div class="content">
+  <div class="header-list">
+    <p>Usuários cadastrados</p>
+  </div>
+
+  <!-- Estado de Loading -->
+  <div *ngIf="loading$ | async" class="loading-shade">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+
+  <!-- Lista de Cards -->
+  <div class="user-grid" *ngIf="!(loading$ | async)">
+    <mat-card *ngFor="let user of filteredUsers$ | async" class="user-card">
+      <mat-card-content>
+        <div class="user-info">
+          <mat-icon class="user-avatar">person</mat-icon>
+          <div class="user-details">
+            <span class="user-name">{{ user.nome }}</span>
+            <span class="user-email">{{ user.email }}</span>
+          </div>
+          <button mat-icon-button (click)="onEdit(user)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Botão Flutuante (FAB) -->
+  <button mat-fab color="warn" class="fab-bottom-right" (click)="onAdd()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
