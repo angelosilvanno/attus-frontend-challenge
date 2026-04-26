@@ -7,6 +7,7 @@ import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { userReducer } from './state/user/user.reducer';
 import { UserEffects } from './state/user/user.effects';
+import { provideNgxMask  } from 'ngx-mask';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,6 +19,7 @@ export const appConfig: ApplicationConfig = {
       maxAge: 25, 
       logOnly: !isDevMode(),
       connectInZone: true 
-    })
+    }),
+    provideNgxMask()
   ]
 };

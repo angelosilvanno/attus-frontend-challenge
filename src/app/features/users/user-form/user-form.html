@@ -15,18 +15,18 @@
       <mat-error *ngIf="userForm.get('email')?.hasError('email')">E-mail inválido</mat-error>
     </mat-form-field>
 
-    <div class="row">
-      <mat-form-field appearance="outline">
+    <div style="display: flex; gap: 10px;">
+      <mat-form-field appearance="outline" style="flex: 1;">
         <mat-label>CPF</mat-label>
-        <input matInput formControlName="cpf" placeholder="000.000.000-00">
+        <input matInput formControlName="cpf" mask="000.000.000-00">
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" style="flex: 1;">
         <mat-label>Número do telefone</mat-label>
-        <input matInput formControlName="telefone" placeholder="(00) 00000-0000">
+        <input matInput formControlName="telefone" mask="(00) 00000-0000" placeholder="(00) 00000-0000">
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" style="flex: 1;">
         <mat-label>Tipo de telefone</mat-label>
         <mat-select formControlName="tipoTelefone">
           <mat-option value="Celular">Celular</mat-option>
@@ -39,7 +39,5 @@
 
 <mat-dialog-actions align="end">
   <button mat-button (click)="onCancel()">CANCELAR</button>
-  <button mat-raised-button color="primary" 
-          [disabled]="userForm.invalid" 
-          (click)="onSave()">SALVAR</button>
+  <button mat-raised-button color="primary" [disabled]="userForm.invalid" (click)="onSave()">SALVAR</button>
 </mat-dialog-actions>

@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { User } from '../../../core/models/user.model';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-user-form',
@@ -18,7 +19,8 @@ import { User } from '../../../core/models/user.model';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    NgxMaskDirective,
   ],
   templateUrl: './user-form.html',
   styleUrl: './user-form.scss'
