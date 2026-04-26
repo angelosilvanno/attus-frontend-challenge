@@ -42,7 +42,6 @@ Instalar NgRx:
 npm install @ngrx/store @ngrx/effects @ngrx/entity @ngrx/store-devtools
 ```
 
----
 
 ### 🔨 Guia de instalação
 
@@ -78,9 +77,8 @@ Depois disso, acesse no navegador:
 http://localhost:4200/
 ```
 
----
 
-## 🛠️ Executando os testes (caso tenha testes)
+## Executando os testes 
 
 Para rodar os testes automatizados:
 
@@ -102,13 +100,10 @@ Isso vai abrir o ambiente de testes no navegador e mostrar os resultados.
 
 ## Autor
 
-* **Angelo Silvano** - Desenvolvedor Front-End - [https://github.com/angelosilvanno](https://github.com/angelosilvanno)
+* **Angelo Silvano** - Desenvolvedor Full Stack - [https://github.com/angelosilvanno](https://github.com/angelosilvanno)
 
 
 ## Gratidão
 
-* Agradeço à equipe da Attus pela oportunidade de realizar este desafio técnico.
-* Meu linkedin: https://url_do_link
-
-
-Se quiser, posso ajustar isso pra ficar mais chamativo pra recrutador, tipo com organização por seções mais visuais ou destaque de pontos fortes do projeto.
+* Agradeço à equipe da **Attus** pela oportunidade de realizar este desafio técnico.
+* Meu linkedin: https://www.linkedin.com/in/angelosilvanno/
