@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserFormComponent } from './user-form';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { provideNgxMask } from 'ngx-mask';
 import { vi } from 'vitest';
 
 describe('UserFormComponent', () => {
@@ -13,6 +14,7 @@ describe('UserFormComponent', () => {
     await TestBed.configureTestingModule({
       imports: [UserFormComponent, NoopAnimationsModule],
       providers: [
+        provideNgxMask(),
         { provide: MatDialogRef, useValue: dialogRefMock },
         { provide: MAT_DIALOG_DATA, useValue: null }
       ]
@@ -37,8 +39,8 @@ describe('UserFormComponent', () => {
     component.userForm.patchValue({
       nome: 'Teste',
       email: 'teste@email.com',
-      cpf: '123',
-      telefone: '123',
+      cpf: '123.456.789-00',
+      telefone: '47999999999',
       tipoTelefone: 'Celular'
     });
     component.onSave();
