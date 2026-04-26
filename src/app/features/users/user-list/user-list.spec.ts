@@ -12,7 +12,6 @@ describe('UserListComponent', () => {
   let fixture: ComponentFixture<UserListComponent>;
   let store: MockStore;
   
-  // Criamos o mock com o retorno esperado para evitar erros de 'undefined'
   const dialogMock = {
     open: vi.fn().mockReturnValue({
       afterClosed: () => of(null)
@@ -31,7 +30,6 @@ describe('UserListComponent', () => {
         })
       ]
     })
-    // Forçamos a substituição do serviço real pelo mock dentro do componente Standalone
     .overrideComponent(UserListComponent, {
       set: {
         providers: [
