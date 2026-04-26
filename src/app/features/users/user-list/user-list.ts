@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map, combineLatest, startWith, Observable } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 // Material Imports
@@ -48,22 +48,24 @@ export class UserListComponent implements OnInit {
   loading$ = this.store.select(selectUserLoading);
   error$ = this.store.select(selectUserError);
 
-  filteredUsers$ = this.users$;
+  filteredUsers$: Observable<User[]> = combineLatest([
+    this.users$,
+    this.searchControl.valueChanges.pipe(
+      startWith(''),
+      debounceTime(300),
+      distinctUntilChanged()
+    )
+  ]).pipe(
+    map(([users, searchTerm]) => {
+      const term = searchTerm?.toLowerCase() || '';
+      return users.filter(user => 
+        user.nome.toLowerCase().includes(term)
+      );
+    })
+  );
 
   ngOnInit(): void {
     this.store.dispatch(UserActions.loadUsers());
-
-    this.searchControl.valueChanges.pipe(
-      debounceTime(300),
-      distinctUntilChanged(),
-      takeUntilDestroyed(this.destroyRef)
-    ).subscribe(searchTerm => {
-      this.filteredUsers$ = this.users$.pipe(
-        map(users => users.filter(user => 
-          user.nome.toLowerCase().includes(searchTerm?.toLowerCase() || '')
-        ))
-      );
-    });
   }
 
   onAdd() {
@@ -80,7 +82,7 @@ export class UserListComponent implements OnInit {
       data: user
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().pipe(takeUntilDestroyed(this.destroyRef)).subscribe(result => {
       if (result) {
         this.store.dispatch(UserActions.addOrUpdateUser({ user: result }));
       }
